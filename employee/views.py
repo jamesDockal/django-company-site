@@ -1,14 +1,22 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-
-def employee(request):
-    
-    return render(request, 'employee/index.html')
+from .models import About
 
 
-def profile(request):
+def aboutus(request):
+
+    aboutdata = {
+        'data': About.objects.all()
+    }
+
+    # print(f' about data ${aboutdata}')
+
+    return render(request, 'employee/about.html', aboutdata)
+
+
+def projects(request):
     teste = {
         'name': 'james'
     }
-    return render(request, 'employee/profile.html', teste)
+    return render(request, 'employee/projects.html', teste)

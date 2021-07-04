@@ -1,8 +1,10 @@
-from django.urls import path, include
+from employee.models import About
+from django import urls
+from django.urls import path
 from . import views
 
 
 urlpatterns = [
-    path('', views.employee),
-    path('profile/', views.profile, name='profile'),
+    path('projects/', views.projects, name='projects'),
+    path('about/', views.aboutus, name='about')
 ]
