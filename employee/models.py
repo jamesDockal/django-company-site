@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.expressions import F
 
 # Create your models here.
 
@@ -10,3 +11,11 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Contact(models.Model):
+    email = models.EmailField(blank=False)
+    text = models.TextField(blank=False)
+
+    def __str__(self):
+        return self.email
