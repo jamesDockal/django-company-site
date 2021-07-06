@@ -1,0 +1,31 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+<form action="" method="post">
+  {% csrf_token %}
+
+  {% if messages %}
+    {% for message in messages %}
+    <div class="container-fluid p-0">
+      <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+      </div>
+    </div>
+    {% endfor %}
+  {% endif %}
+
+  <!-- <strong>Email</strong>
+  <input name="emai" type="text"> -->
+
+  <strong>Username</strong>
+  <input name="username" type="text">
+  <br>
+  <strong>Password</strong>
+  <input name="password" type="text">
+
+  <button type="submit">Login</button>
+</form>
+
